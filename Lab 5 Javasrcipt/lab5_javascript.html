@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktikum 5 - JavaScript & Bootstrap Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <script>
+    // Fungsi menampilkan pesan saat halaman dimuat
+    function pesan() {
+      alert("Memanggil JavaScript lewat body onload");
+    }
+
+    // Fungsi validasi dan cek bilangan genap/ganjil
+    function validasiForm() {
+      let bil = document.getElementById("bilangan").value;
+      let hasil = document.getElementById("hasil");
+
+      if (bil === "") {
+        alert("Kolom bilangan tidak boleh kosong!");
+        return false;
+      }
+
+      if (isNaN(bil)) {
+        alert("Yang dimasukkan harus berupa angka!");
+        return false;
+      }
+
+      if (bil % 2 === 0)
+        hasil.value = "Bilangan Genap";
+      else
+        hasil.value = "Bilangan Ganjil";
+    }
+
+    // Fungsi ubah warna latar belakang dan teks
+    function ubahWarnaLB(warna) {
+      document.body.style.backgroundColor = warna;
+    }
+
+    function ubahWarnaLD(warna) {
+      document.body.style.color = warna;
+    }
+
+    // Fungsi hitung total makanan
+    function hitung(ele) {
+      let total = document.getElementById("total").value;
+      total = total ? parseInt(total) : 0;
+      let harga = parseInt(ele.value);
+
+      if (ele.checked)
+        total += harga;
+      else
+        total -= harga;
+
+      document.getElementById("total").value = total;
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    footer {
+      background-color: #0d6efd;
+      color: white;
+    }
+  </style>
+</head>
+
+<body onload="pesan()" class="py-5">
+
+  <div class="container">
+    <h1 class="text-center text-primary mb-5">🧩 Praktikum 5 - Refactor Form JavaScript</h1>
+
+    <!-- FORM 1: Validasi Bilangan -->
+    <div class="card shadow-sm mb-5">
+      <div class="card-body">
+        <h4 class="text-primary mb-4 text-center">Cek Bilangan Genap / Ganjil</h4>
+
+        <form onsubmit="validasiForm(); return false;">
+          <div class="mb-3">
+            <label for="bilangan" class="form-label">Masukkan Bilangan</label>
+            <input type="text" id="bilangan" class="form-control" placeholder="Contoh: 12">
+          </div>
+
+          <div class="mb-3">
+            <label for="hasil" class="form-label">Hasil</label>
+            <input type="text" id="hasil" class="form-control" readonly placeholder="Hasil akan muncul di sini">
+          </div>
+
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Cek Bilangan</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- FORM 2: Ubah Warna Halaman -->
+    <div class="card shadow-sm mb-5">
+      <div class="card-body text-center">
+        <h4 class="text-primary mb-4">Ubah Warna Halaman</h4>
+        <p class="text-muted mb-4">Klik tombol untuk mengubah warna latar belakang atau warna teks halaman ini.</p>
+
+        <div class="mb-3">
+          <h5 class="fw-semibold">Latar Belakang</h5>
+          <div class="d-flex justify-content-center gap-2 flex-wrap">
+            <button type="button" class="btn btn-success" onclick="ubahWarnaLB('lightgreen')">Hijau</button>
+            <button type="button" class="btn btn-light border" onclick="ubahWarnaLB('white')">Putih</button>
+            <button type="button" class="btn btn-warning" onclick="ubahWarnaLB('khaki')">Krem</button>
+            <button type="button" class="btn btn-secondary" onclick="ubahWarnaLB('#e0e0e0')">Abu-Abu</button>
+          </div>
+        </div>
+
+        <div class="mb-3 mt-4">
+          <h5 class="fw-semibold">Warna Teks</h5>
+          <div class="d-flex justify-content-center gap-2 flex-wrap">
+            <button type="button" class="btn btn-primary" onclick="ubahWarnaLD('blue')">Biru</button>
+            <button type="button" class="btn btn-danger" onclick="ubahWarnaLD('red')">Merah</button>
+            <button type="button" class="btn btn-dark" onclick="ubahWarnaLD('black')">Hitam</button>
+            <button type="button" class="btn btn-warning" onclick="ubahWarnaLD('orange')">Oranye</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM 3: Daftar Menu Makanan -->
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h4 class="text-primary mb-4 text-center">Daftar Menu Makanan</h4>
+
+        <form>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="5000" id="menu1" onclick="hitung(this)">
+            <label class="form-check-label" for="menu1">Ayam Goreng - Rp 5.000</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="500" id="menu2" onclick="hitung(this)">
+            <label class="form-check-label" for="menu2">Tempe Goreng - Rp 500</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="2500" id="menu3" onclick="hitung(this)">
+            <label class="form-check-label" for="menu3">Telur Dadar - Rp 2.500</label>
+          </div>
+
+          <div class="mt-4">
+            <label for="total" class="form-label fw-bold">Total Bayar (Rp)</label>
+            <input id="total" type="text" class="form-control" value="0" readonly>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 mt-5">
+    <p class="mb-0">Refactor Praktikum 5 © 2025 - Muhamad Rizki Wahyu | Universitas Pelita Bangsa</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

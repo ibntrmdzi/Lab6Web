@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Muhamad Rizki Wahyu</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Style tambahan -->
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .navbar {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #about img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border: 4px solid #0d6efd;
+    }
+    footer {
+      background-color: #0d6efd;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Rizki Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Tentang Saya -->
+  <section id="about" class="py-5 mt-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4 text-primary">Tentang Saya</h2>
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-4 mb-3">
+          <img src="Foto Saya.jpg" alt="Foto Saya" class="img-fluid rounded-circle shadow">
+        </div>
+        <div class="col-md-6 text-start">
+          <h3 class="fw-semibold">Muhamad Rizki Wahyu</h3>
+          <p class="lead">
+            Mahasiswa <strong>Universitas Pelita Bangsa</strong> jurusan Teknik Informatika. 
+            Saya tertarik dengan <em>Web Development</em> dan <em>UI/UX Design</em>, serta 
+            senang belajar teknologi baru untuk menciptakan solusi digital yang bermanfaat.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center fw-bold text-primary mb-5">Portfolio</h2>
+      <div class="row g-4">
+        <!-- Proyek 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="https://dummyimage.com/600x400/0d6efd/ffffff&text=E-Commerce" class="card-img-top" alt="Proyek 1">
+            <div class="card-body">
+              <h5 class="card-title">Website E-Commerce</h5>
+              <p class="card-text">Toko online sederhana menggunakan HTML, CSS, dan Bootstrap.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyek 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="https://dummyimage.com/600x400/198754/ffffff&text=To-Do+List" class="card-img-top" alt="Proyek 2">
+            <div class="card-body">
+              <h5 class="card-title">Aplikasi To-Do List</h5>
+              <p class="card-text">Aplikasi web untuk mencatat tugas harian dengan localStorage.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyek 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="https://dummyimage.com/600x400/f39c12/ffffff&text=SIAKAD" class="card-img-top" alt="Proyek 3">
+            <div class="card-body">
+              <h5 class="card-title">Sistem Informasi Akademik</h5>
+              <p class="card-text">Aplikasi berbasis PHP & MySQL untuk mengelola data mahasiswa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="contact" class="py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold text-primary mb-4">Kontak Saya</h2>
+      <p class="lead mb-3">Silakan hubungi saya melalui:</p>
+      <p class="mb-0">
+        📧 <strong>Email:</strong> rizkiwahyu@example.com<br>
+        📱 <strong>WhatsApp:</strong> 0812-3456-7890
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 - Muhamad Rizki Wahyu | Universitas Pelita Bangsa</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
