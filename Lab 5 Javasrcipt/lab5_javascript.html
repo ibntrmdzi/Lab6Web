@@ -7,12 +7,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   
   <script>
-    // Fungsi menampilkan pesan saat halaman dimuat
     function pesan() {
       alert("Memanggil JavaScript lewat body onload");
     }
 
-    // Fungsi validasi dan cek bilangan genap/ganjil
     function validasiForm() {
       let bil = document.getElementById("bilangan").value;
       let hasil = document.getElementById("hasil");
@@ -33,7 +31,6 @@
         hasil.value = "Bilangan Ganjil";
     }
 
-    // Fungsi ubah warna latar belakang dan teks
     function ubahWarnaLB(warna) {
       document.body.style.backgroundColor = warna;
     }
@@ -42,7 +39,6 @@
       document.body.style.color = warna;
     }
 
-    // Fungsi hitung total makanan
     function hitung(ele) {
       let total = document.getElementById("total").value;
       total = total ? parseInt(total) : 0;
@@ -74,7 +70,6 @@
   <div class="container">
     <h1 class="text-center text-primary mb-5">🧩 Praktikum 5 - Refactor Form JavaScript</h1>
 
-    <!-- FORM 1: Validasi Bilangan -->
     <div class="card shadow-sm mb-5">
       <div class="card-body">
         <h4 class="text-primary mb-4 text-center">Cek Bilangan Genap / Ganjil</h4>
@@ -97,7 +92,6 @@
       </div>
     </div>
 
-    <!-- FORM 2: Ubah Warna Halaman -->
     <div class="card shadow-sm mb-5">
       <div class="card-body text-center">
         <h4 class="text-primary mb-4">Ubah Warna Halaman</h4>
@@ -125,7 +119,6 @@
       </div>
     </div>
 
-    <!-- FORM 3: Daftar Menu Makanan -->
     <div class="card shadow-sm">
       <div class="card-body">
         <h4 class="text-primary mb-4 text-center">Daftar Menu Makanan</h4>
@@ -153,7 +146,6 @@
     </div>
   </div>
 
-  <!-- Footer -->
   <footer class="text-center py-3 mt-5">
     <p class="mb-0">Refactor Praktikum 5 © 2025 - Muhamad Rizki Wahyu | Universitas Pelita Bangsa</p>
   </footer>
@@ -161,3 +153,4 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
